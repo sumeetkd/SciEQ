@@ -1,0 +1,32 @@
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="templates/header.css">
+      {% if title %}
+      <title>{{ title }} - Purchaser Info</title>
+      {% else %}
+      <title>Welcome to Purchaser Info</title>
+      {% endif %}
+    </head>
+    <body>
+    
+    <div class="header">
+       <!--
+         <a href="#default" class="logo">CompanyLogo</a> 
+        -->
+        <div class="header_top">
+        <img class="Logo" src="images/Quazar_eq_Logo.webp" ALT="Quazar">  <!-- WIDTH=600 HEIGHT=400 -->
+        <div class="header-right">
+          <a>Dreams decompiled...</a>
+        </div>
+        </div>
+    
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+
+       {% block content %}{% endblock %}
+    </body>
+</html>
