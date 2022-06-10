@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from data import dbAccess
+from src.data import dbAccess
+from src.semantic.tfidf import tfidf
 app = Flask(__name__)
 db = dbAccess()
 
@@ -23,17 +24,26 @@ def search_results():
     """
     if request.method == 'POST':
        result = request.form.to_dict()
-       list = db.subject_filter([result['subject']])
-       search_results = db.search(list,result['keyword'])
+       list = db.subject_filter([result['subject']], int(result['year_start']), int(result['year_end']))
+       search_results = db.search(list, result['keyword'])
        return render_template("search_results.html",results = search_results)
 
 
 @app.route('/selected',methods = ['POST', 'GET'])
 def selected():
+    semantictfidf = tfidf()
     if request.method == 'POST':
         selected_items= request.form.getlist('papers')
-        return render_template("selected.html", results=selected_items)
+        year_start = 1951
+        year_end = 1960
+        findterms = {'$and':[{'mag_field_of_study': {'$in': ['Physics']}},{'abstract':{'$ne':None}},{'year':{'$gte':year_start, '$lte': year_end} }]}
+        #print(selected_items)
+        similarity_results = semantictfidf.similarity(selected_items, findterms)
+        return render_template("selected.html", results=similarity_results)
+
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    print("executing")
+    #app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(port=5000)
