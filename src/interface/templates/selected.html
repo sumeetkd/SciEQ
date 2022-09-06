@@ -7,13 +7,25 @@ Success
    {% for item in results %}
    <tr>
 <!--      <td> <a href="{{  'https://api.semanticscholar.org/CorpusID:' ~ item.paper_id }}"> {{ item.paper_id }} </a>  </td> -->
-      <td>   <input type="checkbox" id="{{ item.paper_id }}" name="papers" value="{{ item.paper_id }}">
+       {% if item.paper_id in papers_to_compare %}
+      <td>   <input type="checkbox" id="{{ item.paper_id }}" name="papers" value="{{ item.paper_id }}"checked>
       </td>
        <td>
           <label href="{{  'https://api.semanticscholar.org/CorpusID:' ~ item.paper_id }}"
                  for="{{ item.paper_id }}">{{ item.paper_id }}</label>
       </td>
        <td> {{ item.abstract }} </td>
+
+       {% else %}
+      <td>
+          <!-- <input type="checkbox" id="{{ item.paper_id }}" name="papers" value="{{ item.paper_id }}"> -->
+      </td>
+       <td>
+          <label href="{{  'https://api.semanticscholar.org/CorpusID:' ~ item.paper_id }}"
+                 for="{{ item.paper_id }}">{{ item.paper_id }}</label>
+      </td>
+       <td> {{ item.abstract }} </td>
+       {% endif %}
       </tr>
 
    {% endfor %}

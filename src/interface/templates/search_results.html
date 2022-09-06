@@ -19,7 +19,16 @@
 
    {% endfor %}
 </table>
-  <p><input type = "submit" value = "submit" /></p>
+  <p>
+  <label for="subject">Field</label>
+  <select id="sub" name="subject">
+  <option value="Physics">Physics</option>
+  <option value="Medicine">Medicine</option>
+  </select>
+  </p>
+  <p>Starting from year<input type = "number" name = "year_start" /></p>
+  <p>Ending at year<input type = "number" name = "year_end" /></p>
+    <p><input type = "submit" value = "submit" /></p>
 </fieldset>
 </form>
 {% endblock %}

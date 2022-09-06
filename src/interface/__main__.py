@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
-from src.data import dbAccess
+from src.data import metadata_class
+from src.data import pdfparse_class
 from src.semantic.tfidf import tfidf
 app = Flask(__name__)
-db = dbAccess()
 
 @app.route('/search_form')
 def search_form():
@@ -24,22 +24,31 @@ def search_results():
     """
     if request.method == 'POST':
        result = request.form.to_dict()
-       list = db.subject_filter([result['subject']], int(result['year_start']), int(result['year_end']))
-       search_results = db.search(list, result['keyword'])
+       metadb = metadata_class()
+       pdfdb = pdfparse_class()
+       list = metadb.subject_filter([result['subject']], int(result['year_start']), int(result['year_end']))
+       search_results = pdfdb.search(list, result['keyword'])
        return render_template("search_results.html",results = search_results)
 
 
 @app.route('/selected',methods = ['POST', 'GET'])
 def selected():
     semantictfidf = tfidf()
+    similar_papers = []
     if request.method == 'POST':
-        selected_items= request.form.getlist('papers')
-        year_start = 1951
-        year_end = 1960
-        findterms = {'$and':[{'mag_field_of_study': {'$in': ['Physics']}},{'abstract':{'$ne':None}},{'year':{'$gte':year_start, '$lte': year_end} }]}
+        #selected_items= request.form.getlist('papers')
+        result = request.form.to_dict()
+        papers_to_compare = request.form.getlist('papers')
+        subject, year_start, year_end = [result['subject']], int(result['year_start']), int(result['year_end'])
+        paper_pool_query = {'$and':[{'mag_field_of_study': {'$in': subject}},{'abstract':{'$ne':None}},{'year':{'$gte':year_start, '$lte': year_end} }]}
+        print(paper_pool_query)
         #print(selected_items)
-        similarity_results = semantictfidf.similarity(selected_items, findterms)
-        return render_template("selected.html", results=similarity_results)
+        for paper in papers_to_compare:
+            similarity_results = semantictfidf.similarity(paper, paper_pool_query)
+            print(similarity_results)
+            similar_papers += similarity_results
+            print(similar_papers)
+        return render_template("selected.html", results=similar_papers, papers_to_compare=papers_to_compare)
 
 
 
