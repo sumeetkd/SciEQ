@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from src.data import metadata_class
 from src.data import pdfparse_class
 from src.semantic.tfidf import tfidf
 app = Flask(__name__)
+
+pdfdb = pdfparse_class()
 
 @app.route('/search_form')
 def search_form():
@@ -14,8 +16,9 @@ def search_form():
     """
     return render_template('search_form.html')
 
-@app.route('/search_results',methods = ['POST', 'GET'])
-def search_results():
+
+@app.route('/search_progressbar', methods = ['GET', 'POST'])
+def search_progressbar():
     """
     On submission of the form on /search_form, the variables are submitted to create an instance of
 
@@ -25,10 +28,19 @@ def search_results():
     if request.method == 'POST':
        result = request.form.to_dict()
        metadb = metadata_class()
-       pdfdb = pdfparse_class()
-       list = metadb.subject_filter([result['subject']], int(result['year_start']), int(result['year_end']))
-       search_results = pdfdb.search(list, result['keyword'])
-       return render_template("search_results.html",results = search_results)
+       paperlist = metadb.subject_filter([result['subject']], int(result['year_start']), int(result['year_end']))
+       pdfdb.search_params(paperlist,result['keyword'])
+    return render_template("search_progressbar.html")
+
+
+@app.route('/search_progress', methods = ['GET', 'POST'])
+def search_progress():
+       return Response(pdfdb.search(), mimetype='text/event-stream')
+
+
+@app.route('/search_results',methods = ['POST', 'GET'])
+def search_results():
+       return render_template("search_results.html",results = pdfdb.search_results())
 
 
 @app.route('/selected',methods = ['POST', 'GET'])
