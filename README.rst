@@ -31,11 +31,11 @@ A basic flask based interface allows the user to access the software remotely. T
 
 2. http://localhost:5000/search_results: Full text database is searched through and occurences are listed. User can select papers of interest for similarity search through the abstract database. User can filter by subject and date range.
 
-.. image:: docs/_static/TFIDF-1.gif
+.. image:: docs/_static/TFIDF1.gif
 
 3. http://localhost:5000/semantic_results: Displays the abstracts of the nearest neighbours to the user selected papers.
 
-.. image:: docs/_static/TFIDF-2.gif
+.. image:: docs/_static/TFIDF2.gif
 
 Dependencies
 ============
