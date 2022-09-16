@@ -40,9 +40,14 @@ def search_progress():
     return Response(pdfdb.search(), mimetype='text/event-stream')
 
 
-@app.route('/search_results',methods = ['POST', 'GET'])
+@app.route('/search_results', methods=['POST', 'GET'])
 def search_results():
-    return render_template("search_results.html",results = pdfdb.search_results())
+    """
+    Search results generated are displayed by this route.
+    Page displays the results and also allows to choose papers for semantic comparison.
+    Submission of the form calls the route '/semantic_progressbar'
+    """
+    return render_template("search_results.html", results=pdfdb.search_results())
 
 
 class similarlity_evaluation():
@@ -50,22 +55,32 @@ class similarlity_evaluation():
     Contains the connections between the database and the tfidf batch evaluator class
 
     Should initialize tfidf to preserve the counts variables
-    TODO: Move to separate class in the semantic folder
+
     """
 
     def __init__(self, paper_list = [], filter_dict = {}):
         self.paper_list = paper_list
         self.filter_dict = filter_dict
-        self.evaluator_instances = []
-        # Moving to help solve repeat evaluation issue
-        # self.metadb = metadata_class()
+
+    # TODO: Move to separate class in the semantic folder
+    # TODO: Combine the paper_list_update and filter_dict_update into one function
 
     def paper_list_update(self, paper_list):
-        # Moved here to help with repeat evaluation
+        """Create individual similarity calculators from the list of papers
+
+        :param paper_list: List of papers obtained from :py:func:semantic_progressbar
+
+        Set the list of papers to be evaluated by :py:class:similarlity_evaluation.
+        Creates a new connection to the metadata db to handle all filtering and abstract requests.
+        Create a list of instances of :py:class:tfidf to handle evaluation for each paper.
+        """
+
+        # Reinitialized when a new list of papers is submitted
         self.metadb = metadata_class()
         self.paper_list = paper_list
-        # To prevent adding of instances to the old list
+        # Reinitialize the evaluator instances for the new form
         self.evaluator_instances = []
+        # Create instances of the similarity calculator class to allow separate namespace for each paper
         for paper_id in paper_list:
             self.evaluator_instances.append(tfidf(
                                 paper_id,
@@ -76,20 +91,29 @@ class similarlity_evaluation():
         return self.paper_list
 
     def filter_dict_update(self, filter_dict):
+        """Update the :py:class:metadata_class with the filters chosen
+
+        :param filter_dict: Filters in the form of a dictionary
+
+        Allows one to change the filter after a refresh of the page
+        """
+
         self.filter_dict = filter_dict
         self.metadb.param_update(self.filter_dict)
 
     def evaluator(self, batchsize):
-        """
-        TODO: Not sure if the yielding will work
+        """Processing the database for all the papers selected for evaluation
+
+        :param batchsize: Batchsize for evaluation of the database
+
+        The :py:meth:evaluator loops through the papers and then calls the function by calling evaluator_instances from the list which in turn are supplied the :py:meth:filtered_batch_generator  
         """
         # Define the count which goes from 0 to the number of papers chosen
         count = -1
         # Loop through the list of papers
         for evaluator in self.evaluator_instances:
-            # super().__init__()
             count += 1
-            # self.set_paper(paper_id, metadb.provide_abstract(paper_id))
+            # Evaluation of the 
             for state in evaluator.process_data(
                     self.metadb.filtered_batch_generator(batchsize)):
                 print("State : {}".format(state))
@@ -116,12 +140,19 @@ simeval = similarlity_evaluation()
 
 @app.route('/semantic_progressbar', methods=['GET', 'POST'])
 def semantic_progressbar():
-    """
-    Route creates an intermediate page displaying the progress of evaluation for Semantic results.
-    The page '/search_results' provides 'papers_to_compare' and parameters needed to define the subset of papers that will be compared to the papers.
+    """Route accepts a form to initiate semantic comparison and displays its progress.
+
+    :param request.form.getlist('papers'): List of papers to be analyzed
+    :param request.form.to_dict()['subject']: Limiting the subject of the database
+    :param request.form.to_dict()['year_end']: Limiting the latest year of publication
+    :param request.form.to_dict()['year_start']: Limiting the earliest year of publication
+
+    Obtains the above parameters from the form submitted in `/search_results` and initiates the semantic evaluation.
+    Renders the template that displays 'N' progress bars that shows the percentage of the database remaining.
+
     """
     if request.method == 'POST':
-        print(request.form)
+        #print(request.form)
 
         # Passing the list of papers to evaluator
         papers_to_compare = request.form.getlist('papers')
@@ -140,6 +171,8 @@ def semantic_progressbar():
         # simeval.filter_dict_update(result)
         simeval.filter_dict_update(filter_dict)
 
+        # TODO: Combine the paper_list_update, batchsize and filter_dict_update into one function
+
     # Pass number of papers to build X number of progress bars
     return render_template(
                     "semantic_progressbar.html",
@@ -148,6 +181,11 @@ def semantic_progressbar():
 
 @app.route('/semantic_progress', methods=['GET', 'POST'])
 def semantic_progress():
+    """Route to get the status of the evaluation
+
+    Start the database processing using :py:method:evaluator which yields the progress on the database through a Flask Response
+    # TODO move batchsize into a variable that can be set by webpage
+    """
     return Response(simeval.evaluator(100), mimetype='text/event-stream')
 
 

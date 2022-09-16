@@ -1,0 +1,100 @@
+{"metadata" : "metadata_0.jsonl.gz" ,"pdf_parses": "pdf_parses_0.jsonl.gz"}
+{"metadata" : "metadata_10.jsonl.gz","pdf_parses": "pdf_parses_10.jsonl.gz"}
+{"metadata" : "metadata_11.jsonl.gz","pdf_parses": "pdf_parses_11.jsonl.gz"}
+{"metadata" : "metadata_12.jsonl.gz","pdf_parses": "pdf_parses_12.jsonl.gz"}
+{"metadata" : "metadata_13.jsonl.gz","pdf_parses": "pdf_parses_13.jsonl.gz"}
+{"metadata" : "metadata_14.jsonl.gz","pdf_parses": "pdf_parses_14.jsonl.gz"}
+{"metadata" : "metadata_15.jsonl.gz","pdf_parses": "pdf_parses_15.jsonl.gz"}
+{"metadata" : "metadata_16.jsonl.gz","pdf_parses": "pdf_parses_16.jsonl.gz"}
+{"metadata" : "metadata_17.jsonl.gz","pdf_parses": "pdf_parses_17.jsonl.gz"}
+{"metadata" : "metadata_18.jsonl.gz","pdf_parses": "pdf_parses_18.jsonl.gz"}
+{"metadata" : "metadata_19.jsonl.gz","pdf_parses": "pdf_parses_19.jsonl.gz"}
+{"metadata" : "metadata_1.jsonl.gz" ,"pdf_parses": "pdf_parses_1.jsonl.gz"}
+{"metadata" : "metadata_20.jsonl.gz","pdf_parses": "pdf_parses_20.jsonl.gz"}
+{"metadata" : "metadata_21.jsonl.gz","pdf_parses": "pdf_parses_21.jsonl.gz"}
+{"metadata" : "metadata_22.jsonl.gz","pdf_parses": "pdf_parses_22.jsonl.gz"}
+{"metadata" : "metadata_23.jsonl.gz","pdf_parses": "pdf_parses_23.jsonl.gz"}
+{"metadata" : "metadata_24.jsonl.gz","pdf_parses": "pdf_parses_24.jsonl.gz"}
+{"metadata" : "metadata_25.jsonl.gz","pdf_parses": "pdf_parses_25.jsonl.gz"}
+{"metadata" : "metadata_26.jsonl.gz","pdf_parses": "pdf_parses_26.jsonl.gz"}
+{"metadata" : "metadata_27.jsonl.gz","pdf_parses": "pdf_parses_27.jsonl.gz"}
+{"metadata" : "metadata_28.jsonl.gz","pdf_parses": "pdf_parses_28.jsonl.gz"}
+{"metadata" : "metadata_29.jsonl.gz","pdf_parses": "pdf_parses_29.jsonl.gz"}
+{"metadata" : "metadata_2.jsonl.gz" ,"pdf_parses": "pdf_parses_2.jsonl.gz"}
+{"metadata" : "metadata_30.jsonl.gz","pdf_parses": "pdf_parses_30.jsonl.gz"}
+{"metadata" : "metadata_31.jsonl.gz","pdf_parses": "pdf_parses_31.jsonl.gz"}
+{"metadata" : "metadata_32.jsonl.gz","pdf_parses": "pdf_parses_32.jsonl.gz"}
+{"metadata" : "metadata_33.jsonl.gz","pdf_parses": "pdf_parses_33.jsonl.gz"}
+{"metadata" : "metadata_34.jsonl.gz","pdf_parses": "pdf_parses_34.jsonl.gz"}
+{"metadata" : "metadata_35.jsonl.gz","pdf_parses": "pdf_parses_35.jsonl.gz"}
+{"metadata" : "metadata_36.jsonl.gz","pdf_parses": "pdf_parses_36.jsonl.gz"}
+{"metadata" : "metadata_37.jsonl.gz","pdf_parses": "pdf_parses_37.jsonl.gz"}
+{"metadata" : "metadata_38.jsonl.gz","pdf_parses": "pdf_parses_38.jsonl.gz"}
+{"metadata" : "metadata_39.jsonl.gz","pdf_parses": "pdf_parses_39.jsonl.gz"}
+{"metadata" : "metadata_3.jsonl.gz" ,"pdf_parses": "pdf_parses_3.jsonl.gz"}
+{"metadata" : "metadata_40.jsonl.gz","pdf_parses": "pdf_parses_40.jsonl.gz"}
+{"metadata" : "metadata_41.jsonl.gz","pdf_parses": "pdf_parses_41.jsonl.gz"}
+{"metadata" : "metadata_42.jsonl.gz","pdf_parses": "pdf_parses_42.jsonl.gz"}
+{"metadata" : "metadata_43.jsonl.gz","pdf_parses": "pdf_parses_43.jsonl.gz"}
+{"metadata" : "metadata_44.jsonl.gz","pdf_parses": "pdf_parses_44.jsonl.gz"}
+{"metadata" : "metadata_45.jsonl.gz","pdf_parses": "pdf_parses_45.jsonl.gz"}
+{"metadata" : "metadata_46.jsonl.gz","pdf_parses": "pdf_parses_46.jsonl.gz"}
+{"metadata" : "metadata_47.jsonl.gz","pdf_parses": "pdf_parses_47.jsonl.gz"}
+{"metadata" : "metadata_48.jsonl.gz","pdf_parses": "pdf_parses_48.jsonl.gz"}
+{"metadata" : "metadata_49.jsonl.gz","pdf_parses": "pdf_parses_49.jsonl.gz"}
+{"metadata" : "metadata_4.jsonl.gz" ,"pdf_parses": "pdf_parses_4.jsonl.gz"}
+{"metadata" : "metadata_50.jsonl.gz","pdf_parses": "pdf_parses_50.jsonl.gz"}
+{"metadata" : "metadata_51.jsonl.gz","pdf_parses": "pdf_parses_51.jsonl.gz"}
+{"metadata" : "metadata_52.jsonl.gz","pdf_parses": "pdf_parses_52.jsonl.gz"}
+{"metadata" : "metadata_53.jsonl.gz","pdf_parses": "pdf_parses_53.jsonl.gz"}
+{"metadata" : "metadata_54.jsonl.gz","pdf_parses": "pdf_parses_54.jsonl.gz"}
+{"metadata" : "metadata_55.jsonl.gz","pdf_parses": "pdf_parses_55.jsonl.gz"}
+{"metadata" : "metadata_56.jsonl.gz","pdf_parses": "pdf_parses_56.jsonl.gz"}
+{"metadata" : "metadata_57.jsonl.gz","pdf_parses": "pdf_parses_57.jsonl.gz"}
+{"metadata" : "metadata_58.jsonl.gz","pdf_parses": "pdf_parses_58.jsonl.gz"}
+{"metadata" : "metadata_59.jsonl.gz","pdf_parses": "pdf_parses_59.jsonl.gz"}
+{"metadata" : "metadata_5.jsonl.gz" ,"pdf_parses": "pdf_parses_5.jsonl.gz"}
+{"metadata" : "metadata_60.jsonl.gz","pdf_parses": "pdf_parses_60.jsonl.gz"}
+{"metadata" : "metadata_61.jsonl.gz","pdf_parses": "pdf_parses_61.jsonl.gz"}
+{"metadata" : "metadata_62.jsonl.gz","pdf_parses": "pdf_parses_62.jsonl.gz"}
+{"metadata" : "metadata_63.jsonl.gz","pdf_parses": "pdf_parses_63.jsonl.gz"}
+{"metadata" : "metadata_64.jsonl.gz","pdf_parses": "pdf_parses_64.jsonl.gz"}
+{"metadata" : "metadata_65.jsonl.gz","pdf_parses": "pdf_parses_65.jsonl.gz"}
+{"metadata" : "metadata_66.jsonl.gz","pdf_parses": "pdf_parses_66.jsonl.gz"}
+{"metadata" : "metadata_67.jsonl.gz","pdf_parses": "pdf_parses_67.jsonl.gz"}
+{"metadata" : "metadata_68.jsonl.gz","pdf_parses": "pdf_parses_68.jsonl.gz"}
+{"metadata" : "metadata_69.jsonl.gz","pdf_parses": "pdf_parses_69.jsonl.gz"}
+{"metadata" : "metadata_6.jsonl.gz" ,"pdf_parses": "pdf_parses_6.jsonl.gz"}
+{"metadata" : "metadata_70.jsonl.gz","pdf_parses": "pdf_parses_70.jsonl.gz"}
+{"metadata" : "metadata_71.jsonl.gz","pdf_parses": "pdf_parses_71.jsonl.gz"}
+{"metadata" : "metadata_72.jsonl.gz","pdf_parses": "pdf_parses_72.jsonl.gz"}
+{"metadata" : "metadata_73.jsonl.gz","pdf_parses": "pdf_parses_73.jsonl.gz"}
+{"metadata" : "metadata_74.jsonl.gz","pdf_parses": "pdf_parses_74.jsonl.gz"}
+{"metadata" : "metadata_75.jsonl.gz","pdf_parses": "pdf_parses_75.jsonl.gz"}
+{"metadata" : "metadata_76.jsonl.gz","pdf_parses": "pdf_parses_76.jsonl.gz"}
+{"metadata" : "metadata_77.jsonl.gz","pdf_parses": "pdf_parses_77.jsonl.gz"}
+{"metadata" : "metadata_78.jsonl.gz","pdf_parses": "pdf_parses_78.jsonl.gz"}
+{"metadata" : "metadata_79.jsonl.gz","pdf_parses": "pdf_parses_79.jsonl.gz"}
+{"metadata" : "metadata_7.jsonl.gz" ,"pdf_parses": "pdf_parses_7.jsonl.gz"}
+{"metadata" : "metadata_80.jsonl.gz","pdf_parses": "pdf_parses_80.jsonl.gz"}
+{"metadata" : "metadata_81.jsonl.gz","pdf_parses": "pdf_parses_81.jsonl.gz"}
+{"metadata" : "metadata_82.jsonl.gz","pdf_parses": "pdf_parses_82.jsonl.gz"}
+{"metadata" : "metadata_83.jsonl.gz","pdf_parses": "pdf_parses_83.jsonl.gz"}
+{"metadata" : "metadata_84.jsonl.gz","pdf_parses": "pdf_parses_84.jsonl.gz"}
+{"metadata" : "metadata_85.jsonl.gz","pdf_parses": "pdf_parses_85.jsonl.gz"}
+{"metadata" : "metadata_86.jsonl.gz","pdf_parses": "pdf_parses_86.jsonl.gz"}
+{"metadata" : "metadata_87.jsonl.gz","pdf_parses": "pdf_parses_87.jsonl.gz"}
+{"metadata" : "metadata_88.jsonl.gz","pdf_parses": "pdf_parses_88.jsonl.gz"}
+{"metadata" : "metadata_89.jsonl.gz","pdf_parses": "pdf_parses_89.jsonl.gz"}
+{"metadata" : "metadata_8.jsonl.gz" ,"pdf_parses": "pdf_parses_8.jsonl.gz"}
+{"metadata" : "metadata_90.jsonl.gz","pdf_parses": "pdf_parses_90.jsonl.gz"}
+{"metadata" : "metadata_91.jsonl.gz","pdf_parses": "pdf_parses_91.jsonl.gz"}
+{"metadata" : "metadata_92.jsonl.gz","pdf_parses": "pdf_parses_92.jsonl.gz"}
+{"metadata" : "metadata_93.jsonl.gz","pdf_parses": "pdf_parses_93.jsonl.gz"}
+{"metadata" : "metadata_94.jsonl.gz","pdf_parses": "pdf_parses_94.jsonl.gz"}
+{"metadata" : "metadata_95.jsonl.gz","pdf_parses": "pdf_parses_95.jsonl.gz"}
+{"metadata" : "metadata_96.jsonl.gz","pdf_parses": "pdf_parses_96.jsonl.gz"}
+{"metadata" : "metadata_97.jsonl.gz","pdf_parses": "pdf_parses_97.jsonl.gz"}
+{"metadata" : "metadata_98.jsonl.gz","pdf_parses": "pdf_parses_98.jsonl.gz"}
+{"metadata" : "metadata_99.jsonl.gz","pdf_parses": "pdf_parses_99.jsonl.gz"}
+{"metadata" : "metadata_9.jsonl.gz" ,"pdf_parses": "pdf_parses_9.jsonl.gz"}
